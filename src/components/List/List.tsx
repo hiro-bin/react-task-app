@@ -1,4 +1,4 @@
-import React, { type FC } from 'react'
+import { type FC } from 'react'
 import { GrSubtract } from 'react-icons/gr'
 import Task from '../Task/Task'
 import ActionButton from '../ActionButton/ActionButton'
@@ -38,7 +38,7 @@ const List: FC<TListProps> = ({
   const handleTaskChange = (
     boardId: string,
     listId: string,
-    taskId: string,
+    _taskId: string,
     task: ITask
   ) => {
     dispatch(setModalData({boardId, listId, task}));
@@ -75,7 +75,7 @@ const List: FC<TListProps> = ({
             </div>
           ))}
           {provided.placeholder}
-          <ActionButton boardId={boardId} listId={list.listId} />
+          <ActionButton boardId={boardId} listId={list.listId} list />
       </div>
       )}
     </Droppable>
